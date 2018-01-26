@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top:0px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+	<p id="myRandom"></p>
+<script>
+
+var countDownDate = new Date("Jul 26, 2018 22:42:05").getTime();
+function random_numbers(n){
+	if(n>=1000000 || n<=0){
+		alert("random number should be lesser than 1000000 but greater than 0 dude..")
+		document.getElementById("myRandom").style.display = "none";
+	}
+	var now = new Date().getTime();
+    var milliseconds = Math.floor(now % 1000);
+    var size = n.toString().length;    
+    var test = Math.floor((Math.pow(milliseconds,size)) % n);
+
+	document.getElementById("myRandom").innerHTML = "Random value: " + test;  
+
+}
+
+random_numbers(10);
+
+</script>
+</body>
+</html>
